@@ -1,0 +1,2 @@
+#cloud-config
+apt_mirror: http://us.archive.ubuntu.com/ubuntu/

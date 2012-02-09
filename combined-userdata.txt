@@ -1,0 +1,27 @@
+Content-Type: multipart/mixed; boundary="===============1235112555=="
+MIME-Version: 1.0
+
+--===============1235112555==
+Content-Type: text/cloud-config; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="config.txt"
+
+#cloud-config
+apt_mirror: http://us.archive.ubuntu.com/ubuntu/
+
+--===============1235112555==
+Content-Type: text/x-shellscript; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="main.sh"
+
+#!/bin/sh
+apt-get -y install python-software-properties
+add-apt-repository ppa:chris-lea/node.js --yes
+apt-get update
+apt-get -y install nodejs
+curl http://npmjs.org/install.sh | clean=yes sh 
+npm install -g spine.app hem
+
+--===============1235112555==--
